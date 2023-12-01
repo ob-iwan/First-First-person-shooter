@@ -34,7 +34,10 @@ public class knifeThrow : MonoBehaviour
                 }
             }
         }
-        reloadTime -= Time.deltaTime;
+        if (knifeReload)
+        {
+            reloadTime -= Time.deltaTime;
+        }
         if (reloadTime < 0)
         {
             Debug.Log("reloaded");
