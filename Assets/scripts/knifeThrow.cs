@@ -26,7 +26,7 @@ public class knifeThrow : MonoBehaviour
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag.Equals("killable"))
+                if (hit.collider.CompareTag("killable"))
                 {
                     boom.Play();
                     Destroy(hit.collider.gameObject);

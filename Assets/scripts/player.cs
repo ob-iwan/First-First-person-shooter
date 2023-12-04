@@ -17,7 +17,7 @@ public class player : MonoBehaviour
     private float moveZ;
 
     private Vector3 move;
-    private Vector3 scaleChange = new Vector3(0f, 0.5f, 0f);
+    private Vector3 scaleChange = new Vector3(0f, 1f, 0f);
 
     private float activeX;
     private float activeY;
