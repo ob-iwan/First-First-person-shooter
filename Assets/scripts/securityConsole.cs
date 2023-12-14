@@ -18,12 +18,6 @@ public class securityConsole : MonoBehaviour
         activeCameraLabel.text = "Camere: none";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void onClicked()
     {
         selectNextCamera();
@@ -31,15 +25,28 @@ public class securityConsole : MonoBehaviour
 
     void selectNextCamera()
     {
+        //switch the next cam
         var previousCamera = activeCamera;
         activeCamIndex = (activeCamIndex + 1) % securityCameras.Count;
 
-        if (previousCamera == null)
+        //tell the previous cam to stop watching
+        if (previousCamera != null)
             previousCamera.stopWatching(this);
 
+        //tell the new cam to start watching
+        //and to change cam name to new one
         activeCameraLabel.text = $"camera: {activeCamera.displayName}";
-
         activeCamera.startWatching(this);
         cameraImage.texture = activeCamera.outputTexture;
+    }
+
+    public void onDetected(GameObject target)
+    {
+        Debug.Log($"Detected {target.name}");
+    }
+
+    public void onAllClear()
+    {
+        Debug.Log("All clear");
     }
 }

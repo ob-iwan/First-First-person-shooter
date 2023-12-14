@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 845466525419598911}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: killable
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -159,7 +159,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f224074b3283f554dbf922861fe515b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
   defaultMat: {fileID: 2100000, guid: 36495af68ab3daf42a7a02a52b9b179e, type: 2}
   angrMat: {fileID: 2100000, guid: a250109dc8f75d94297f9ad50f07f681, type: 2}
+  rend: {fileID: 0}
   attackRange: 18
   attackRangeCrouch: 4
+  attackRangeRunning: 22
+  calmSpeed: 2
+  angrySpeed: 5
+  attacking: 0

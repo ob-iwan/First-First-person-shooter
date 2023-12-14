@@ -5665,7 +5665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 718268422551349251, guid: aefb2719f73d0eb409b39856ade1b232, type: 3}
-  amount: 0
+  amount: 10
 --- !u!4 &379273821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 880834233477669646, guid: 11ce8d4ac52464143884f3674109f171, type: 3}
@@ -9724,7 +9724,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1cad864391ceda049bb3a2677ed25e4a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 89ec4ace3eb6ea547bd0be3e1fcfda9d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &2112478335
 Transform:

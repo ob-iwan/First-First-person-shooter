@@ -5,7 +5,7 @@ using UnityEngine;
 public class knifeThrow : MonoBehaviour
 {
     public Camera cam;
-    public ParticleSystem boom;
+    //public ParticleSystem boom;
 
     private Ray ray;
     private RaycastHit hit;
@@ -26,9 +26,9 @@ public class knifeThrow : MonoBehaviour
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.CompareTag("killable"))
+                if (hit.collider.CompareTag("killable") || hit.collider.CompareTag("enemy"))
                 {
-                    boom.Play();
+                    //boom.Play();
                     Destroy(hit.collider.gameObject);
                     knifeReload = true;
                 }

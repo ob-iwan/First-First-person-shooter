@@ -12,7 +12,7 @@ public class enemySpawn : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject enemy = Instantiate(enemyPrefab);
+            GameObject enemy = Instantiate(enemyPrefab,transform.position,Quaternion.identity);
         }
     }
 }

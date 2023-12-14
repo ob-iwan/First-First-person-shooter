@@ -6,7 +6,7 @@ using UnityEngine;
 public class melee : MonoBehaviour
 {
     public Camera cam;
-    public ParticleSystem boom;
+    //public ParticleSystem boom;
 
     private Ray ray;
     private RaycastHit hit;
@@ -21,9 +21,9 @@ public class melee : MonoBehaviour
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag.Equals("killable") && hit.distance < knifeRange)
+                if (hit.collider.tag.Equals("killable") || hit.collider.CompareTag("enemy") && hit.distance < knifeRange)
                 {
-                    boom.Play();
+                    //boom.Play();
                     Destroy(hit.collider.gameObject);
                 }
             }

@@ -8,11 +8,14 @@ TagManager:
   - killable
   - cannonBall
   - console
+  - spawner
+  - enemy
+  - health
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - Player
   - Water
   - UI
   - security cam

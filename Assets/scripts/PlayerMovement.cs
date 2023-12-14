@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private float currentSpeed;
     public float walkingSpeed = 10f;
@@ -24,14 +24,13 @@ public class player : MonoBehaviour
     private float activeZ;
 
     public bool crouch = false;
+    public bool running = false;
 
     public CharacterController characterController;
-    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         currentSpeed = walkingSpeed;
         baseLineGravity = gravity;
     }
@@ -43,6 +42,7 @@ public class player : MonoBehaviour
         activeY = transform.position.y;
         activeZ = transform.position.z;
 
+        //movement
         moveX = Input.GetAxis("Horizontal") * currentSpeed * Time.deltaTime;
         moveZ = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
 
@@ -52,15 +52,19 @@ public class player : MonoBehaviour
 
         characterController.Move(move);
 
+        //sprinting
         if (Input.GetKey(KeyCode.LeftShift) && !crouch)
         {
             currentSpeed = runningSpeed;
+            running = true;
         }
         else if (!crouch)
         {
             currentSpeed = walkingSpeed;
+            running = false;
         }
 
+        //jumping
         if (characterController.isGrounded && Input.GetButton("Jump"))
         {
             gravity = baseLineGravity;
@@ -71,6 +75,7 @@ public class player : MonoBehaviour
             gravity -= 1 * Time.deltaTime;
         }
 
+        //crouching
         if (Input.GetKeyDown(KeyCode.C) && !crouch)
         {
             currentSpeed = crouchingSpeed;
@@ -84,12 +89,4 @@ public class player : MonoBehaviour
             crouch = false;
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("cannonBall"))
-    //    { 
-    //        Destroy(gameObject.);
-    //    }
-    //}
 }

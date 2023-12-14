@@ -16,11 +16,6 @@ public class consoleInteraction : MonoBehaviour
     {
         console = GameObject.FindGameObjectWithTag("console").GetComponent<securityConsole>();
     }
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
