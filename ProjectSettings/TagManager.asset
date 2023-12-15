@@ -6,11 +6,13 @@ TagManager:
   tags:
   - grounded
   - killable
-  - cannonBall
   - console
   - spawner
   - enemy
   - health
+  - killAbleWall
+  - door
+  - file
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - security cam
-  - 
+  - wall
   - 
   - 
   - 

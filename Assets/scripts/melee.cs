@@ -11,6 +11,14 @@ public class melee : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
+    public int hitAmountEnemy = 3;
+    public int hitAmountWall = 5;
+    public int hitAmount = 20;
+
+    public int hitWall;
+    public int hitEnemy;
+    public int Hit;
+
     public float knifeRange = 5f;
 
 
@@ -19,12 +27,34 @@ public class melee : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, knifeRange))
             {
-                if (hit.collider.tag.Equals("killable") || hit.collider.CompareTag("enemy") && hit.distance < knifeRange)
+                if (hit.collider.CompareTag("enemy"))
                 {
-                    //boom.Play();
-                    Destroy(hit.collider.gameObject);
+                    hitEnemy++;
+                    if (hitEnemy > hitAmountEnemy)
+                    {
+                        Destroy(hit.collider.gameObject);
+                        hitEnemy = 0;
+                    }
+                }
+                if (hit.collider.CompareTag("killAbleWall"))
+                {
+                    hitWall++;
+                    if (hitWall > hitAmountWall)
+                    {
+                        Destroy(hit.collider.gameObject);
+                        hitWall = 0;
+                    }
+                }
+                if (hit.collider.CompareTag("killable"))
+                {
+                    Hit++;
+                    if (Hit > hitAmount)
+                    {
+                        Destroy(hit.collider.gameObject);
+                        Hit = 0;
+                    }
                 }
             }
         }

@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyAttack : MonoBehaviour
+public class boss : MonoBehaviour
 {
-    private PlayerMovement playerCode;
-    public enemyMovement movement;
-    private Transform player;
-    public Material defaultMat;
-    public Material angrMat;
-    public Renderer rend;
-    private securityConsole console;
+    public PlayerMovement playerCode;
+    public Transform player;
+    public bossMovement movement;
 
     public float attackRange = 10f;
     public float attackRangeCrouch = 4f;
@@ -20,22 +16,6 @@ public class enemyAttack : MonoBehaviour
 
     public bool attacking;
 
-    private void Awake()
-    {
-        console = GameObject.FindGameObjectWithTag("console").GetComponent<securityConsole>();
-
-        movement = GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyMovement>();
-        
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerCode = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -43,19 +23,16 @@ public class enemyAttack : MonoBehaviour
         if (!playerCode.crouch && !playerCode.running)
         {
             //player in range or detected by cam
-            if (Vector3.Distance(transform.position, player.position) <= attackRange || console.detected)
+            if (Vector3.Distance(transform.position, player.position) <= attackRange)
             {
-                rend.sharedMaterial = angrMat;
                 movement.monster.SetDestination(player.position);
-                movement.monster.speed = angrySpeed;
                 attacking = true;
             }
             //nothing in range and not detected by cam
-            else if (attacking && !console.detected)
+            else if (attacking)
             {
-                rend.sharedMaterial = defaultMat;
                 movement.monster.speed = calmSpeed;
-                movement.monsterMove();
+                movement.monster.SetDestination(transform.position);
                 attacking = false;
             }
         }
@@ -65,20 +42,18 @@ public class enemyAttack : MonoBehaviour
         else if (playerCode.crouch && !playerCode.running)
         {
             //player in range or detected by cam
-            if (Vector3.Distance(transform.position, player.position) <= attackRangeCrouch || console.detected)
+            if (Vector3.Distance(transform.position, player.position) <= attackRangeCrouch)
             {
-                rend.sharedMaterial = angrMat;
                 movement.monster.SetDestination(player.position);
                 movement.monster.speed = angrySpeed;
                 attacking = true;
             }
 
             //nothing in range and not detected by cam
-            else if (attacking && !console.detected)
+            else if (attacking)
             {
-                rend.sharedMaterial = defaultMat;
                 movement.monster.speed = calmSpeed;
-                movement.monsterMove();
+                movement.monster.SetDestination(transform.position);
                 attacking = false;
             }
         }
@@ -86,20 +61,18 @@ public class enemyAttack : MonoBehaviour
         else if (playerCode.running && !playerCode.crouch)
         {
             //player in range or detected by cam
-            if (Vector3.Distance(transform.position, player.position) <= attackRangeRunning || console.detected)
+            if (Vector3.Distance(transform.position, player.position) <= attackRangeRunning)
             {
-                rend.sharedMaterial = angrMat;
                 movement.monster.SetDestination(player.position);
                 movement.monster.speed = angrySpeed;
                 attacking = true;
             }
 
             //nothing in range and not detected by cam
-            else if (attacking && !console.detected)
+            else if (attacking)
             {
-                rend.sharedMaterial = defaultMat;
                 movement.monster.speed = calmSpeed;
-                movement.monsterMove();
+                movement.monster.SetDestination(transform.position);
                 attacking = false;
             }
         }

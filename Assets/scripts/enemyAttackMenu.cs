@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyAttack : MonoBehaviour
+public class enemyAttackMenu : MonoBehaviour
 {
     private PlayerMovement playerCode;
     public enemyMovement movement;

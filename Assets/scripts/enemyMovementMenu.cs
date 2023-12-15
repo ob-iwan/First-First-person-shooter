@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyMovement : MonoBehaviour
+public class enemyMovementMenu : MonoBehaviour
 {
     public NavMeshAgent monster;
 
@@ -13,8 +13,6 @@ public class enemyMovement : MonoBehaviour
     private float posZ;
 
     public float squareOMovement = 40;
-    public enemyAttack enemyAttackScript;
-    private securityConsole console;
 
     private float minX;
     private float maxX;
@@ -22,11 +20,6 @@ public class enemyMovement : MonoBehaviour
     private float maxZ;
 
     public float close = 2f;
-
-    private void Awake()
-    {
-        console = GameObject.FindGameObjectWithTag("console").GetComponent<securityConsole>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +37,7 @@ public class enemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, new Vector3 (posX, posY, posZ)) <= close && !enemyAttackScript.attacking && !console.detected)
+        if (Vector3.Distance(transform.position, new Vector3 (posX, posY, posZ)) <= close)
         {
             monsterMove();
         }

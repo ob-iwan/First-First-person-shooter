@@ -111,7 +111,7 @@ public class securityCam : MonoBehaviour
                 var vecToTarget = (currenlyDetectedTarget.transform.position + targetVOffset * Vector3.up -
                                    pivotPoint.transform.position).normalized;
 
-                desiredRotation = Quaternion.LookRotation(vecToTarget, Vector3.up) * Quaternion.Euler(0f, 90f, 0f);
+                desiredRotation = Quaternion.LookRotation(vecToTarget, Vector3.up) * Quaternion.Euler(0f, 0f, 0f);
             }
         }
         else
@@ -132,6 +132,7 @@ public class securityCam : MonoBehaviour
                                                                  maxRotationSpeed * Time.deltaTime);
     }
     
+    //detection
     void refreshTargetInfo()
     {
         float highestDetectionLevel = 0f;
@@ -213,21 +214,6 @@ public class securityCam : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (respawns == null)
-            respawns = GameObject.FindGameObjectsWithTag("enemy");
-
-        foreach (GameObject respawn in respawns)
-        {
-            if (!enemyAttackScript.attacking)
-            {
-                Debug.Log(respawn);
-                respawn.GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
-                enemyAttackScript.rend.sharedMaterial = enemyAttackScript.angrMat;
-                enemyAttackScript.movement.monster.speed = enemyAttackScript.angrySpeed;
-                enemyAttackScript.attacking = true;
-            }
-        }
-
         //skip if the tag isn't supported
         if (!detectableTags.Contains(other.tag))
             return;

@@ -11,13 +11,11 @@ GameObject:
   - component: {fileID: 1375188325477339271}
   - component: {fileID: 4683046984045487047}
   - component: {fileID: 3487618039656492995}
-  - component: {fileID: 3192194043279299465}
   - component: {fileID: 5844019516945957366}
   - component: {fileID: 3238195145757873470}
-  - component: {fileID: 1177308220011486299}
-  - component: {fileID: 845466525419598911}
+  - component: {fileID: -3318221352417305021}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: enemy Menu
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3192194043279299465
+--- !u!136 &5844019516945957366
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,29 +106,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &5844019516945957366
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718268422551349251}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -156,7 +131,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1177308220011486299
+--- !u!114 &-3318221352417305021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,32 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 718268422551349251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cbd90e47e3271d4792327a236449ca7, type: 3}
+  m_Script: {fileID: 11500000, guid: 129fd4ab8e2ff264b9ca57ad6e34b7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 3238195145757873470}
-  squareOMovement: 70
-  enemyAttackScript: {fileID: 845466525419598911}
-  close: 3
---- !u!114 &845466525419598911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718268422551349251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f224074b3283f554dbf922861fe515b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 1177308220011486299}
-  defaultMat: {fileID: 2100000, guid: 36495af68ab3daf42a7a02a52b9b179e, type: 2}
-  angrMat: {fileID: 2100000, guid: a250109dc8f75d94297f9ad50f07f681, type: 2}
-  rend: {fileID: 3487618039656492995}
-  attackRange: 18
-  attackRangeCrouch: 4
-  attackRangeRunning: 22
-  calmSpeed: 2
-  angrySpeed: 5
-  attacking: 0
+  squareOMovement: 40
+  close: 2

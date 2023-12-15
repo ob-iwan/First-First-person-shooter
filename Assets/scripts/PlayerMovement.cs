@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public sceneSystem scene;
     private float currentSpeed;
     public float walkingSpeed = 10f;
     public float runningSpeed = 17f;
@@ -26,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     public bool crouch = false;
     public bool running = false;
 
+    public int score = 0;
+
+    public TextMeshProUGUI scoreBoard;
+
     public CharacterController characterController;
 
     // Start is called before the first frame update
@@ -38,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.M))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            scene.loadMenu();
+        }
+
         activeX = transform.position.x;
         activeY = transform.position.y;
         activeZ = transform.position.z;
@@ -87,6 +99,16 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = walkingSpeed;
             transform.localScale += scaleChange;
             crouch = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("file"))
+        {
+            score++;
+            scoreBoard.text = $"{score}/7 files collected";
+            Destroy(other.gameObject);
         }
     }
 }

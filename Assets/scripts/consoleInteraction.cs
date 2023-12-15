@@ -21,7 +21,7 @@ public class consoleInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 8f))
             {
                 if (hit.collider.CompareTag("console"))
                 {
