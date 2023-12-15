@@ -23,9 +23,6 @@ public class enemyAttack : MonoBehaviour
     private void Awake()
     {
         console = GameObject.FindGameObjectWithTag("console").GetComponent<securityConsole>();
-
-        movement = GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyMovement>();
-        
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerCode = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }

@@ -1599,7 +1599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169401069}
   m_Layer: 0
-  m_Name: spawners
+  m_Name: spawners/enemy's
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1614,7 +1614,7 @@ Transform:
   m_GameObject: {fileID: 169401068}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1813,7 +1813,7 @@ Transform:
   m_GameObject: {fileID: 191865349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.4, y: 0.12, z: -11.4}
+  m_LocalPosition: {x: -70.4, y: 0, z: -11.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4310,7 +4310,7 @@ Transform:
   m_GameObject: {fileID: 496886258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4, y: 0.12, z: 53.9}
+  m_LocalPosition: {x: -6.4, y: 0, z: 53.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5858,7 +5858,7 @@ Transform:
   m_GameObject: {fileID: 683910834}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -67.8, y: 0.12, z: 57.1}
+  m_LocalPosition: {x: -67.8, y: 0, z: 57.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6487,7 +6487,7 @@ Transform:
   m_GameObject: {fileID: 813414555}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.9, y: 0.12, z: 2.8}
+  m_LocalPosition: {x: 41.9, y: 0, z: 2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9459,7 +9459,7 @@ Transform:
   m_GameObject: {fileID: 1071324563}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.12, z: -60.2}
+  m_LocalPosition: {x: -0.2, y: 0, z: -60.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9478,7 +9478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 718268422551349251, guid: aefb2719f73d0eb409b39856ade1b232, type: 3}
-  amount: 7
+  amount: 5
 --- !u!4 &1078181647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1936562641700387593, guid: ffb8a83e7c9f96946bae588f1f5d52f7, type: 3}
@@ -12099,7 +12099,7 @@ Transform:
   m_GameObject: {fileID: 1295775671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.6, y: 0.12, z: -62.7}
+  m_LocalPosition: {x: -53.6, y: 0, z: -62.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12118,7 +12118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 718268422551349251, guid: aefb2719f73d0eb409b39856ade1b232, type: 3}
-  amount: 7
+  amount: 5
 --- !u!1 &1309135627
 GameObject:
   m_ObjectHideFlags: 0
@@ -12250,7 +12250,7 @@ Transform:
   m_GameObject: {fileID: 1314411230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -68.8, y: 0.12, z: -70.1}
+  m_LocalPosition: {x: -68.8, y: 0, z: -70.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12506,7 +12506,7 @@ Transform:
   m_GameObject: {fileID: 1382194697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.9, y: 0.12, z: 50.2}
+  m_LocalPosition: {x: 23.9, y: 0, z: 50.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12525,7 +12525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 718268422551349251, guid: aefb2719f73d0eb409b39856ade1b232, type: 3}
-  amount: 8
+  amount: 6
 --- !u!1 &1393620106
 GameObject:
   m_ObjectHideFlags: 0
@@ -16305,7 +16305,7 @@ Transform:
   m_GameObject: {fileID: 1933182625}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.8, y: 0.12, z: 2.5}
+  m_LocalPosition: {x: -8.8, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17575,10 +17575,10 @@ MonoBehaviour:
   playerCode: {fileID: 1256803670}
   player: {fileID: 1256803673}
   movement: {fileID: 8435944793007252632}
-  attackRange: 15
+  attackRange: 22
   attackRangeCrouch: 10
-  attackRangeRunning: 20
-  calmSpeed: 5
+  attackRangeRunning: 25
+  calmSpeed: 8
   angrySpeed: 8
   attacking: 0
 --- !u!114 &8435944793007252632
